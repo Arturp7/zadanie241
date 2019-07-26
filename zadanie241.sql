@@ -24,7 +24,7 @@ SELECT * from pracownik WHERE stanowisko = 'developer';
 
 -- 5.Pobiera pracowników, którzy mają co najmniej 30 lat
  -- SELECT * from pracownik WHERE DATEDIFF(EXTRACT(YEAR FROM CURDATE()), EXTRACT(YEAR FROM data_urodzenia)) >= 30 ; -- !!!!!!!! NIE działa
-  SELECT * from pracownik WHERE DATEDIFF(CURDATE(), data_urodzenia) >= 30 ; -- !!!!!!!!
+  SELECT * from pracownik WHERE DATEDIFF(CURDATE(), data_urodzenia) >= 30*365 ; -- !!!!!!!!
 
 -- 6.Zwiększa wypłatę pracowników na wybranym stanowisku o 10%
 UPDATE pracownik SET wyplata = wyplata*1.1
@@ -91,6 +91,7 @@ where kod_pocztowy = '90210';
 
 
 
+drop table pracownik
 
 
 
